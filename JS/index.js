@@ -2,6 +2,9 @@ function makeMatrix() {
     let square = new Array();
     for (let i=0; i<5; i++){
         square[i] = new Array();
+        for (let j=0; j<5; j++){
+            square[i][j] = new Array();
+        }
     }
     //https://slbuchanan.wordpress.com/2013/02/06/codes-and-ciphers/
     //populate square according to model
@@ -18,11 +21,6 @@ function makeMatrix() {
     square[0][2] = square[4][2] = 7;
     square[1][2] = square[3][2] = 12;
     square[2][2] = "0";
-
-    let alpha = new Array();
-    for (let i=0; i<5; i++){
-        alpha[i] = new Array();
-    }
 }
 
 function genCipher() {
