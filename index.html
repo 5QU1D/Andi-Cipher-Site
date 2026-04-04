@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Map Maker</title>
+        <title>Rune's Cipher</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap">
@@ -23,14 +23,66 @@
             
             <div id="cipherTable">
                 <form class="form-grid">
-                    <input type="text" id="00" name="00" value=""><br>
-                    <input id="name" type="text">
+                    <label for="00">1</label><br>
+                    <label for="10">2</label><br>
+                    <label for="20">3</label><br>
+                    <label for="30">4</label><br>
+                    <label for="40">5</label><br>
+                    <input type="text" id="00" name="00" value="1"><br>
+                    <input type="text" id="10" name="10" value="2"><br>
+                    <input type="text" id="20" name="20" value="3"><br>
+                    <input type="text" id="30" name="30" value="4"><br>
+                    <input type="text" id="40" name="40" value="5"><br>
+
+                    <label for="01">8</label><br>
+                    <label for="11">9</label><br>
+                    <label for="21">10</label><br>
+                    <label for="31">11</label><br>
+                    <label for="41">6</label><br>
+                    <input type="text" id="01" name="01" value="8"><br>
+                    <input type="text" id="11" name="11" value="9"><br>
+                    <input type="text" id="21" name="21" value="10"><br>
+                    <input type="text" id="31" name="31" value="11"><br>
+                    <input type="text" id="41" name="41" value="6"><br>
+
+                    <label for="02">7</label><br>
+                    <label for="12">12</label><br>
+                    <label for="22">BLANK</label><br>
+                    <label for="32">12</label><br>
+                    <label for="42">7</label><br>
+                    <input type="text" id="02" name="02" value="7"><br>
+                    <input type="text" id="12" name="12" value="12"><br>
+                    <input type="text" id="22" name="22" value=""><br>
+                    <input type="text" id="32" name="32" value="12"><br>
+                    <input type="text" id="42" name="42" value="7"><br>
+
+                    <label for="03">6</label><br>
+                    <label for="13">11</label><br>
+                    <label for="23">10</label><br>
+                    <label for="33">9</label><br>
+                    <label for="43">8</label><br>
+                    <input type="text" id="03" name="03" value="6"><br>
+                    <input type="text" id="13" name="13" value="11"><br>
+                    <input type="text" id="23" name="23" value="10"><br>
+                    <input type="text" id="33" name="33" value="9"><br>
+                    <input type="text" id="43" name="43" value="8"><br>
+
+                    <label for="04">1</label><br>
+                    <label for="14">2</label><br>
+                    <label for="24">3</label><br>
+                    <label for="34">4</label><br>
+                    <label for="44">5</label><br>
+                    <input type="text" id="04" name="04" value="5"><br>
+                    <input type="text" id="14" name="14" value="4"><br>
+                    <input type="text" id="24" name="24" value="3"><br>
+                    <input type="text" id="34" name="34" value="2"><br>
+                    <input type="text" id="44" name="44" value="1"><br>
                 </form>
             </div>
         </div>
 
-        <button onclick="navChangeE()">Go to Encryption</button>
+        <button onclick="navChangeE()" id="toEncrypt">Accept Cipher and Continue</button>
 
-        <script type="module" src="js/main.js"></script>
-        <script type="text/javascript" src="js/In-and-Out.js"></script>
+        <script type="module" src="JS/main.js"></script>
+        <script type="text/javascript" src="JS/index.js"></script>
     </body>
