@@ -120,6 +120,13 @@ function updateCi() {
     }
     // console.log(newKeys);
 
+    //error check for duplicate letter
+    let uniq = [...new Set(newKeys)];
+    if (newKeys.length != uniq.length) {
+        alert("Duplicate letter detected!");
+        return false;  //early exit from function
+    }
+
     //read values from the ends inward to pair for keys:values
     newCode = new Map();
     //front:back inward
