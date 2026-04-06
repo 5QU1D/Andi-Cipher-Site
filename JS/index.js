@@ -36,6 +36,13 @@ function sanKey(key) {
     return result;
 }
 
+function updateFields() {
+    let keys = code.keys();
+    for(let i=0;i<25;i++){
+        document.getElementById(i).value = keys.next().value;
+    }
+}
+
 function genCipher() {
     keyword = document.getElementById("keyword").value;
     keyword = keyword.toLowerCase();
@@ -112,10 +119,12 @@ function genCipher() {
     // let a = 1;
     // console.log(document.getElementById(a)); //successfully pulls intended element
     //update the grid input values (0-24)
-    let keys = code.keys();
-    for(let i=0;i<25;i++){
-        document.getElementById(i).value = keys.next().value;
-    }
+    // let keys = code.keys();
+    // for(let i=0;i<25;i++){
+    //     document.getElementById(i).value = keys.next().value;
+    // }
+
+    updateFields();
 
     //show cipher table
     if (cipherTable.style.display == "none") {
@@ -139,9 +148,31 @@ function genCipher() {
 }
 
 function updateCi() {
+    var newKeys = new Array();
     for(let i=0;i<25;i++){
-        // document.getElementById(i).value
+        newKeys.push(document.getElementById(i).value);
     }
+    // console.log(newKeys);
+
+    //read values from the ends inward to pair for keys:values
+    newCode = new Map();
+    //front:back inward
+    for(let i=0; i<13;i++){
+        // console.log(newKeys[24-i]); //from end to BLANK (inclusive)
+        // console.log(newKeys[i] + ", " + newKeys[24-i])
+        newCode.set(newKeys[i],newKeys[24-1]);
+    }
+
+    //back:front inward
+    for(let i=12; i>=0;i--){
+        // console.log(newKeys[24-i] + ", " + newKeys[i]);
+        newCode.set(newKeys[24-i], newKeys[i]);
+    }
+
+    // console.log(code);
+    code = newCode;
+    // console.log(code);
+    updateFields();
 }
 
 function navChangeE() {
