@@ -14,4 +14,5 @@
   function encrypt() {
     readText();
 
+    //when encrypting, search code[i][0], return code[i][1]
   }

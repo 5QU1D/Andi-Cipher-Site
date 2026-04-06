@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Rune's Cipher</title>
+        <title>Andi Gift</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap">
@@ -10,78 +10,80 @@
     </head>
 
     <body>
-        <div id="title">Rune's Cipher</div>
+        <div id="title">Rune's Journal Cipher</div>
 
         <div id="desc">
-            <p>DESCRIBE HERE</p>
+            <p>NOTE: at time of initial release, all text will be converted to lower case. It just makes life a helluvalot easier. So you'll need to manually add your capital letters back in once the ciphertext has been spat out. (That happens on the next page, and the button to navigate to it will be visible once you've generated a cipher table.)</p>
+            <p>Also, J's get turned into I's at every turn, so a J in the keyword will become an I for the purposes of generating the cipher.</p>
         </div>
 
         <div id="input">
-            <input type="text" id="keyword">
-
-            <button onclick="genCipher()">Show Cipher Table</button>
+            <p></p><p></p>
+            <center><input type="text" id="keyword">
+            <button onclick="genCipher()">Show Cipher Table</button></center>
             
             <div id="cipherTable" style="display: none;">
                 <form class="form-grid">
-                    <label for="00">1</label><br>
-                    <label for="10">2</label><br>
-                    <label for="20">3</label><br>
-                    <label for="30">4</label><br>
-                    <label for="40">5</label><br>
-                    <input type="text" id="00" name="00" value="1"><br>
-                    <input type="text" id="10" name="10" value="2"><br>
-                    <input type="text" id="20" name="20" value="3"><br>
-                    <input type="text" id="30" name="30" value="4"><br>
-                    <input type="text" id="40" name="40" value="5"><br>
+                    <label for="00">1</label>
+                    <label for="10">2</label>
+                    <label for="20">3</label>
+                    <label for="30">4</label>
+                    <label for="40">5</label>
+                    <input type="text" id="0" name="00" value="1" style="text-align: center;">
+                    <input type="text" id="1" name="10" value="2" style="text-align: center;">
+                    <input type="text" id="2" name="20" value="3" style="text-align: center;">
+                    <input type="text" id="3" name="30" value="4" style="text-align: center;">
+                    <input type="text" id="4" name="40" value="5" style="text-align: center;">
 
-                    <label for="01">8</label><br>
-                    <label for="11">9</label><br>
-                    <label for="21">10</label><br>
-                    <label for="31">11</label><br>
-                    <label for="41">6</label><br>
-                    <input type="text" id="01" name="01" value="8"><br>
-                    <input type="text" id="11" name="11" value="9"><br>
-                    <input type="text" id="21" name="21" value="10"><br>
-                    <input type="text" id="31" name="31" value="11"><br>
-                    <input type="text" id="41" name="41" value="6"><br>
+                    <label for="01">8</label>
+                    <label for="11">9</label>
+                    <label for="21">10</label>
+                    <label for="31">11</label>
+                    <label for="41">6</label>
+                    <input type="text" id="5" name="01" value="8" style="text-align: center;">
+                    <input type="text" id="6" name="11" value="9" style="text-align: center;">
+                    <input type="text" id="7" name="21" value="10" style="text-align: center;">
+                    <input type="text" id="8" name="31" value="11" style="text-align: center;">
+                    <input type="text" id="9" name="41" value="6" style="text-align: center;">
 
-                    <label for="02">7</label><br>
-                    <label for="12">12</label><br>
-                    <label for="22">BLANK</label><br>
-                    <label for="32">12</label><br>
-                    <label for="42">7</label><br>
-                    <input type="text" id="02" name="02" value="7"><br>
-                    <input type="text" id="12" name="12" value="12"><br>
-                    <input type="text" id="22" name="22" value=""><br>
-                    <input type="text" id="32" name="32" value="12"><br>
-                    <input type="text" id="42" name="42" value="7"><br>
+                    <label for="02">7</label>
+                    <label for="12">12</label>
+                    <label for="22">BLANK</label>
+                    <label for="32">12</label>
+                    <label for="42">7</label>
+                    <input type="text" id="10" name="02" value="7" style="text-align: center;">
+                    <input type="text" id="11" name="12" value="12" style="text-align: center;">
+                    <input type="text" id="12" name="22" value="" style="text-align: center;">
+                    <input type="text" id="13" name="32" value="12" style="text-align: center;">
+                    <input type="text" id="14" name="42" value="7" style="text-align: center;">
 
-                    <label for="03">6</label><br>
-                    <label for="13">11</label><br>
-                    <label for="23">10</label><br>
-                    <label for="33">9</label><br>
-                    <label for="43">8</label><br>
-                    <input type="text" id="03" name="03" value="6"><br>
-                    <input type="text" id="13" name="13" value="11"><br>
-                    <input type="text" id="23" name="23" value="10"><br>
-                    <input type="text" id="33" name="33" value="9"><br>
-                    <input type="text" id="43" name="43" value="8"><br>
+                    <label for="03">6</label>
+                    <label for="13">11</label>
+                    <label for="23">10</label>
+                    <label for="33">9</label>
+                    <label for="43">8</label>
+                    <input type="text" id="15" name="03" value="6" style="text-align: center;">
+                    <input type="text" id="16" name="13" value="11" style="text-align: center;">
+                    <input type="text" id="17" name="23" value="10" style="text-align: center;">
+                    <input type="text" id="18" name="33" value="9" style="text-align: center;">
+                    <input type="text" id="19" name="43" value="8" style="text-align: center;">
 
-                    <label for="04">1</label><br>
-                    <label for="14">2</label><br>
-                    <label for="24">3</label><br>
-                    <label for="34">4</label><br>
-                    <label for="44">5</label><br>
-                    <input type="text" id="04" name="04" value="5"><br>
-                    <input type="text" id="14" name="14" value="4"><br>
-                    <input type="text" id="24" name="24" value="3"><br>
-                    <input type="text" id="34" name="34" value="2"><br>
-                    <input type="text" id="44" name="44" value="1"><br>
+                    <label for="04">1</label>
+                    <label for="14">2</label>
+                    <label for="24">3</label>
+                    <label for="34">4</label>
+                    <label for="44">5</label>
+                    <input type="text" id="20" name="04" value="5" style="text-align: center;">
+                    <input type="text" id="21" name="14" value="4" style="text-align: center;">
+                    <input type="text" id="22" name="24" value="3" style="text-align: center;">
+                    <input type="text" id="23" name="34" value="2" style="text-align: center;">
+                    <input type="text" id="24" name="44" value="1" style="text-align: center;">
                 </form>
             </div>
         </div>
 
-        <button onclick="navChangeE()" id="toEncrypt" style="display: none;">Accept Cipher and Continue</button>
+        <center><button onclick="updateCi()" id="updateCipher" style="display: none;">Update</button></center><br>
+        <center><button onclick="navChangeE()" id="toEncrypt" style="display: none;">Accept Cipher and Continue</button></center>
 
         <script type="module" src="JS/main.js"></script>
         <script type="text/javascript" src="JS/index.js"></script>

@@ -58,7 +58,7 @@ function genCipher() {
     keyword = sanKey(keyword); //remove duplicate letters from key
     // console.log(keyword);
 
-    var cipher = [[1,''],[2,''],[3,''],[4,''],[5,''],[8,''],[9,''],[10,''],[11,''],[6,''],[7,''],[12,''],[0,''], [12,''],[7,''],[6,''],[11,''],[10,''],[9,''],[8,''],[5,''],[4,''],[3,''],[2,''],[1,''],];
+    var cipher = [[1,''],[2,''],[3,''],[4,''],[5,''],[8,''],[9,''],[10,''],[11,''],[6,''],[7,''],[12,''],[13,''], [12,''],[7,''],[6,''],[11,''],[10,''],[9,''],[8,''],[5,''],[4,''],[3,''],[2,''],[1,''],];
     // console.log(cipher[0][0]); //returns 1
     // console.log(cipher[0][1]); //correctly returns value of second element of tuple
 
@@ -80,9 +80,9 @@ function genCipher() {
     for (let i=0; i<letterOrd.length; i++) {
         cipher[i][1] = letterOrd[i];
     }
-    // console.log(cipher);
+    // console.log(cipher); GOOD TO HERE
 
-    var pairing = [[0,[]], [1,[]], [2,[]], [3,[]], [4,[]], [5,[]], [6,[]], [7,[]], [8,[]], [9,[]], [10,[]], [11,[]], [12,[]]];
+    var pairing = [[1,[]], [2,[]], [3,[]], [4,[]], [5,[]], [6,[]], [7,[]], [8,[]], [9,[]], [10,[]], [11,[]], [12,[]],[13,[]]];
     
     for(let i=0; i<cipher.length;i++){
         let key = cipher[i][0];
@@ -93,34 +93,54 @@ function genCipher() {
             }
         }
     }
-    var mirror = pairing[0][1][0];
-    pairing[0][1].push(mirror);
+    var mirror = pairing[12][1][0];
+    pairing[12][1].push(mirror);
+
+    // console.log(pairing); //GOOD TO HERE
 
     //new map, code, pairing pairing[j][1][0] and pairing[j][1][1] as two pushes (j10=j11 and j11=j10)
-    var code = new Map();
+    code = new Map();
     for(let i=0;i<pairing.length;i++){
         code.set(pairing[i][1][0], pairing[i][1][1]);
+    }
+    for(let i=pairing.length-1; i>=0;i--){
         code.set(pairing[i][1][1], pairing[i][1][0]);
-    } //can confirm map appears to be correctly populated
+    }
+    //can confirm map appears to be correctly populated
     // console.log(code.get('a')); //'a' and "a" return same
 
-    
+    // let a = 1;
+    // console.log(document.getElementById(a)); //successfully pulls intended element
+    //update the grid input values (0-24)
+    let keys = code.keys();
+    for(let i=0;i<25;i++){
+        document.getElementById(i).value = keys.next().value;
+    }
 
-
-
-    //when encrypting, search code[i][0], return code[i][1]
-
+    //show cipher table
     if (cipherTable.style.display == "none") {
-        cipherTable.style.display = "block";
+        cipherTable.style.display = "flex";
     } else {
-        if (keyword = '') cipherTable.style.display = "none";
+        cipherTable.style.display = "none";
+    }
+
+    if(updateCipher.style.display == "none"){
+        updateCipher.style.display = "block";
+    } else {
+        updateCipher.style.display = "none";
     }
 
     //show nav change button
     if (toEncrypt.style.display == "none") {
         toEncrypt.style.display = "block";
     } else {
-        if (keyword = '') toEncrypt.style.display = "none";
+        toEncrypt.style.display = "none";
+    }
+}
+
+function updateCi() {
+    for(let i=0;i<25;i++){
+        // document.getElementById(i).value
     }
 }
 
