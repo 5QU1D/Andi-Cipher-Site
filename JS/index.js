@@ -82,8 +82,33 @@ function genCipher() {
     }
     // console.log(cipher);
 
+    var pairing = [[0,[]], [1,[]], [2,[]], [3,[]], [4,[]], [5,[]], [6,[]], [7,[]], [8,[]], [9,[]], [10,[]], [11,[]], [12,[]]];
+    
+    for(let i=0; i<cipher.length;i++){
+        let key = cipher[i][0];
+        for(let j=0;j<pairing.length;j++){
+            if (key == pairing[j][0]){
+                pairing[j][1].push(cipher[i][1]);
+                break;
+            }
+        }
+    }
+    var mirror = pairing[0][1][0];
+    pairing[0][1].push(mirror);
+
+    //new map, code, pairing pairing[j][1][0] and pairing[j][1][1] as two pushes (j10=j11 and j11=j10)
+    var code = new Map();
+    for(let i=0;i<pairing.length;i++){
+        code.set(pairing[i][1][0], pairing[i][1][1]);
+        code.set(pairing[i][1][1], pairing[i][1][0]);
+    } //can confirm map appears to be correctly populated
+    // console.log(code.get('a')); //'a' and "a" return same
+
+    
 
 
+
+    //when encrypting, search code[i][0], return code[i][1]
 
     if (cipherTable.style.display == "none") {
         cipherTable.style.display = "block";
