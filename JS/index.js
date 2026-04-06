@@ -37,6 +37,9 @@ function sanKey(key) {
 }
 
 function updateFields() {
+    // let a = 1;
+    // console.log(document.getElementById(a)); //successfully pulls intended element
+    //update the grid input values (0-24)
     let keys = code.keys();
     for(let i=0;i<25;i++){
         document.getElementById(i).value = keys.next().value;
@@ -87,7 +90,7 @@ function genCipher() {
     for (let i=0; i<letterOrd.length; i++) {
         cipher[i][1] = letterOrd[i];
     }
-    // console.log(cipher); GOOD TO HERE
+    // console.log(cipher);
 
     var pairing = [[1,[]], [2,[]], [3,[]], [4,[]], [5,[]], [6,[]], [7,[]], [8,[]], [9,[]], [10,[]], [11,[]], [12,[]],[13,[]]];
     
@@ -102,10 +105,9 @@ function genCipher() {
     }
     var mirror = pairing[12][1][0];
     pairing[12][1].push(mirror);
+    // console.log(pairing);
 
-    // console.log(pairing); //GOOD TO HERE
-
-    //new map, code, pairing pairing[j][1][0] and pairing[j][1][1] as two pushes (j10=j11 and j11=j10)
+    //new map (code) pairing pairing[j][1][0] and pairing[j][1][1] as two pushes (j10=j11 and j11=j10)
     code = new Map();
     for(let i=0;i<pairing.length;i++){
         code.set(pairing[i][1][0], pairing[i][1][1]);
@@ -113,16 +115,7 @@ function genCipher() {
     for(let i=pairing.length-1; i>=0;i--){
         code.set(pairing[i][1][1], pairing[i][1][0]);
     }
-    //can confirm map appears to be correctly populated
     // console.log(code.get('a')); //'a' and "a" return same
-
-    // let a = 1;
-    // console.log(document.getElementById(a)); //successfully pulls intended element
-    //update the grid input values (0-24)
-    // let keys = code.keys();
-    // for(let i=0;i<25;i++){
-    //     document.getElementById(i).value = keys.next().value;
-    // }
 
     updateFields();
 
@@ -158,7 +151,6 @@ function updateCi() {
     newCode = new Map();
     //front:back inward
     for(let i=0; i<13;i++){
-        // console.log(newKeys[24-i]); //from end to BLANK (inclusive)
         // console.log(newKeys[i] + ", " + newKeys[24-i])
         newCode.set(newKeys[i],newKeys[24-1]);
     }
@@ -169,9 +161,7 @@ function updateCi() {
         newCode.set(newKeys[24-i], newKeys[i]);
     }
 
-    // console.log(code);
     code = newCode;
-    // console.log(code);
     updateFields();
 }
 
