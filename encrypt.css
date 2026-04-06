@@ -1,3 +1,5 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark */
+
 #title {
     text-align: center;
     font-size: 4em;
@@ -39,4 +41,21 @@ body {
     margin: auto;
     text-align: justify;
     background-color: rgba(222, 215, 171, .4);
+    font-size: 1.1em;
+}
+
+#input {
+    margin-top: 30px;
+}
+
+#return {
+    width: 50%;
+    margin: 0 auto;
+    border-style: outset;
+    padding: 10px 10px 10px 10px;
+    font-size: 1.1em;
+}
+
+#output {
+    margin-top: 20px;
 }

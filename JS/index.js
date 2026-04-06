@@ -81,7 +81,7 @@ function genCipher() {
     // console.log(pairing);
 
     //new map (code) pairing pairing[j][1][0] and pairing[j][1][1] as two pushes (j10=j11 and j11=j10)
-    code = new Map();
+    // code = new Map();
     for(let i=0;i<pairing.length;i++){
         code.set(pairing[i][1][0], pairing[i][1][1]);
     }
@@ -145,6 +145,31 @@ function updateCi() {
     updateFields();
 }
 
+// Source - https://stackoverflow.com/a/56150320
+// Posted by Pawel, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-04-06, License - CC BY-SA 4.0
+
+function replacer(key, value) {
+  if(value instanceof Map) {
+    return {
+      dataType: 'Map',
+      value: Array.from(value.entries()), // or with spread: value: [...value]
+    };
+  } else {
+    return value;
+  }
+}
+
+
 function navChangeE() {
-    location.replace("encrypt.html")
+    // localStorage.setItem("cipher", code);
+    // localStorage.cipher = JSON.stringify(Array.from(code.entries()));
+    // localStorage.setItem("cipher", JSON.stringify(code));
+
+    str = JSON.stringify(code, replacer);
+    // console.log(str);
+    localStorage.setItem("cipher", str);
+
+
+    location.replace("encrypt.html");
 }

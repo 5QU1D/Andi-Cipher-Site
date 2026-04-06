@@ -6,26 +6,27 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="encrypt.css">
     </head>
 
     <body>
-        <div id="title">Rune's Cipher</div>
+        <script type="text/javascript" src="JS/main.js"></script>
+        <script type="text/javascript" src="JS/encrypt.js"></script>
+
+        <div id="title">Rune's Journal Cipher</div>
 
         <div id="desc">
-            <p>DESCRIBE HERE</p>
+            <p>I have not stress tested this to see what the comfortable upper limit is for length of text entry. I wouldn't do more than a paragraph at a time, to be safe.</p>
+            <p>As a note, as present, all text will be converted to lowercase prior to encryption. I can try to implement support for upper and lower cases if you really need it, just let me know <3</p>
         </div>
 
         <div id="input">
-            <input type="text" id="plaintext" placeholder="Type here <3">
-            <button onclick="encrypt()">Encrypt</button>
+            <center><textarea id="plaintext" placeholder="Type here <3" rows="15" cols="50" style="font-size: 1.1em;"></textarea> <br>
+            <button onclick="encrypt()" style="margin-top:10px;">Encrypt</button></center>
         </div>
 
         <div id="output">
-
-        </div>
-
-        <script type="module" src="js/main.js"></script>
-        <script type="text/javascript" src="js/In-and-Out.js"></script>
+            <p id="return" style="display:none"></p>
+        </div> 
     </body>
         
