@@ -31,9 +31,6 @@ function genCipher() {
     // console.log("Input received:", keyLen);
 
 
-
-
-
     //show cipher table
     if (cipherTable.style.display === "none") {
         cipherTable.style.display = "block";
@@ -64,7 +61,7 @@ function navChangeE() {
     input = document.getElementById("plaintext").value;
     
     // 2. Perform an action with it (e.g., log to console)
-    console.log("Input received:", text);
+    console.log("Input received:", input);
   }
 
   function printText() {
@@ -75,4 +72,5 @@ function navChangeE() {
   function encrypt() {
     readText();
 
+    for 
   }

@@ -21,7 +21,7 @@
 
             <button onclick="genCipher()">Show Cipher Table</button>
             
-            <div id="cipherTable">
+            <div id="cipherTable" style="display:none;">
                 <form class="form-grid">
                     <label for="00">1</label><br>
                     <label for="10">2</label><br>
@@ -81,14 +81,14 @@
             </div>
         </div>
 
-        <button onclick="navChangeE()" id="toEncrypt">Accept Cipher and Continue</button>
+        <button onclick="navChangeE()" id="toEncrypt" style="display:none;">Accept Cipher and Continue</button>
 
-        <div id="input2">
+        <div id="input2" style="display: none;">
             <input type="text" id="plaintext" placeholder="Type here <3">
             <button onclick="encrypt()">Encrypt</button>
         </div>
 
-        <div id="output2">
+        <div id="output2" style="display: none;">
             test
         </div>
 
