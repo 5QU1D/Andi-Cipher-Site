@@ -56,3 +56,11 @@ body {
 #toEncrypt{
     display: none;
 }
+
+#input2{
+    display: none;
+}
+
+#output2{
+    display: none;
+}
